@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            function on(){
+                let url = window.location.origin + '/on';
+                fetch(url);
+            }
+
+            function off(){
+                let url = window.location.origin + '/off';
+                fetch(url);
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <button onclick="on()">ON</button>
+        <button onclick="off()">OFF</button>
+    </body>
+</html>
