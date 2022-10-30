@@ -2,40 +2,48 @@
 <html>
     <head>
         <style>
-            button {
+            button, input {
                 font-size: 80px;
                 margin: 10px;
             }
         </style>
+        <script>
+            function btnClick(key) {
+                let ipaddr = document.getElementById("ipaddr").value
+                let url = ipaddr+key;
+                fetch(url)
+            }
+        </script>
     </head>
     <body align="center">
-        <button onClick="alert(this.innerText)">Q</button>
-        <button onClick="alert(this.innerText)">W</button>
-        <button onClick="alert(this.innerText)">E</button>
-        <button onClick="alert(this.innerText)">R</button>
-        <button onClick="alert(this.innerText)">T</button>
-        <button onClick="alert(this.innerText)">Y</button>
-        <button onClick="alert(this.innerText)">U</button>
-        <button onClick="alert(this.innerText)">I</button>
-        <button onClick="alert(this.innerText)">O</button>
-        <button onClick="alert(this.innerText)">P</button><br>
-        <button onClick="alert(this.innerText)">A</button>
-        <button onClick="alert(this.innerText)">S</button>
-        <button onClick="alert(this.innerText)">D</button>
-        <button onClick="alert(this.innerText)">F</button>
-        <button onClick="alert(this.innerText)">G</button>
-        <button onClick="alert(this.innerText)">H</button>
-        <button onClick="alert(this.innerText)">J</button>
-        <button onClick="alert(this.innerText)">K</button>
-        <button onClick="alert(this.innerText)">L</button><br>
-        <button onClick="alert(this.innerText)">Z</button>
-        <button onClick="alert(this.innerText)">X</button>
-        <button onClick="alert(this.innerText)">C</button>
-        <button onClick="alert(this.innerText)">V</button>
-        <button onClick="alert(this.innerText)">B</button>
-        <button onClick="alert(this.innerText)">N</button>
-        <button onClick="alert(this.innerText)">M</button><br>
-        <button onClick="alert(' ')">[ SPACE ]</button>
+        <input type="text" id="ipaddr" placeholder="Enter Pico W IP Address"/><br>
+        <button onClick="btnClick(this.innerText)">Q</button>
+        <button onClick="btnClick(this.innerText)">W</button>
+        <button onClick="btnClick(this.innerText)">E</button>
+        <button onClick="btnClick(this.innerText)">R</button>
+        <button onClick="btnClick(this.innerText)">T</button>
+        <button onClick="btnClick(this.innerText)">Y</button>
+        <button onClick="btnClick(this.innerText)">U</button>
+        <button onClick="btnClick(this.innerText)">I</button>
+        <button onClick="btnClick(this.innerText)">O</button>
+        <button onClick="btnClick(this.innerText)">P</button><br>
+        <button onClick="btnClick(this.innerText)">A</button>
+        <button onClick="btnClick(this.innerText)">S</button>
+        <button onClick="btnClick(this.innerText)">D</button>
+        <button onClick="btnClick(this.innerText)">F</button>
+        <button onClick="btnClick(this.innerText)">G</button>
+        <button onClick="btnClick(this.innerText)">H</button>
+        <button onClick="btnClick(this.innerText)">J</button>
+        <button onClick="btnClick(this.innerText)">K</button>
+        <button onClick="btnClick(this.innerText)">L</button><br>
+        <button onClick="btnClick(this.innerText)">Z</button>
+        <button onClick="btnClick(this.innerText)">X</button>
+        <button onClick="btnClick(this.innerText)">C</button>
+        <button onClick="btnClick(this.innerText)">V</button>
+        <button onClick="btnClick(this.innerText)">B</button>
+        <button onClick="btnClick(this.innerText)">N</button>
+        <button onClick="btnClick(this.innerText)">M</button><br>
+        <button onClick="btnClick('space')">[ SPACE ]</button>
     </body>
 </html>
 
