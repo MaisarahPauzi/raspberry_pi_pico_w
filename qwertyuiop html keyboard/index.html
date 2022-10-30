@@ -2,8 +2,19 @@
 <html>
     <head>
         <style>
-            button, input {
-                font-size: 80px;
+            button {
+                font-size: 50px;
+                margin: 10px;
+            }
+
+            .btn {
+                width: 60px;
+                height: 60px;
+            }
+
+            input {
+                width: 100%;
+                font-size: 50px;
                 margin: 10px;
             }
         </style>
@@ -13,37 +24,56 @@
                 let url = ipaddr+key;
                 fetch(url)
             }
+
+            function changeBtnTxt(btns, isUpperCase) {
+                for (let i=0; i<btns.length; i++) {
+                    if(isUpperCase) {
+                        btns[i].innerHTML = btns[i].innerHTML.toLowerCase();
+                    } else {
+                        btns[i].innerHTML = btns[i].innerHTML.toUpperCase();
+                    }
+                }
+            }
+
+            function shiftKey() {
+                let btns = document.getElementsByClassName('btn');
+                let firstBtnText = btns[0].innerHTML;
+                changeBtnTxt(btns, firstBtnText.toUpperCase() === firstBtnText);
+            }
         </script>
     </head>
     <body align="center">
         <input type="text" id="ipaddr" placeholder="Enter Pico W IP Address"/><br>
-        <button onClick="btnClick(this.innerText)">Q</button>
-        <button onClick="btnClick(this.innerText)">W</button>
-        <button onClick="btnClick(this.innerText)">E</button>
-        <button onClick="btnClick(this.innerText)">R</button>
-        <button onClick="btnClick(this.innerText)">T</button>
-        <button onClick="btnClick(this.innerText)">Y</button>
-        <button onClick="btnClick(this.innerText)">U</button>
-        <button onClick="btnClick(this.innerText)">I</button>
-        <button onClick="btnClick(this.innerText)">O</button>
-        <button onClick="btnClick(this.innerText)">P</button><br>
-        <button onClick="btnClick(this.innerText)">A</button>
-        <button onClick="btnClick(this.innerText)">S</button>
-        <button onClick="btnClick(this.innerText)">D</button>
-        <button onClick="btnClick(this.innerText)">F</button>
-        <button onClick="btnClick(this.innerText)">G</button>
-        <button onClick="btnClick(this.innerText)">H</button>
-        <button onClick="btnClick(this.innerText)">J</button>
-        <button onClick="btnClick(this.innerText)">K</button>
-        <button onClick="btnClick(this.innerText)">L</button><br>
-        <button onClick="btnClick(this.innerText)">Z</button>
-        <button onClick="btnClick(this.innerText)">X</button>
-        <button onClick="btnClick(this.innerText)">C</button>
-        <button onClick="btnClick(this.innerText)">V</button>
-        <button onClick="btnClick(this.innerText)">B</button>
-        <button onClick="btnClick(this.innerText)">N</button>
-        <button onClick="btnClick(this.innerText)">M</button><br>
-        <button onClick="btnClick('space')">[ SPACE ]</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">Q</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">W</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">E</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">R</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">T</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">Y</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">U</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">I</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">O</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">P</button>
+        <button onClick="btnClick('backspace')">[ BACKSPACE ]</button><br>
+        <button class="btn"  onClick="btnClick(this.innerText)">A</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">S</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">D</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">F</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">G</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">H</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">J</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">K</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">L</button>
+        <button onClick="btnClick('enter')">[ ENTER ]</button><br>
+        <button class="btn"  onClick="btnClick(this.innerText)">Z</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">X</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">C</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">V</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">B</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">N</button>
+        <button class="btn"  onClick="btnClick(this.innerText)">M</button>
+        <button onClick="shiftKey()">[ SHIFT ]</button><br>
+        <button onClick="btnClick('space')" style="width: 80%">SPACE</button>
     </body>
 </html>
 
