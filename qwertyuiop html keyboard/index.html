@@ -20,8 +20,8 @@
         </style>
         <script>
             function btnClick(key) {
-                let ipaddr = document.getElementById("ipaddr").value
-                let url = ipaddr+key;
+                let ipaddr = window.location.origin; 
+                let url = ipaddr + "/key/" + key;
                 fetch(url)
             }
 
@@ -43,7 +43,6 @@
         </script>
     </head>
     <body align="center">
-        <input type="text" id="ipaddr" placeholder="Enter Pico W IP Address"/><br>
         <button class="btn"  onClick="btnClick(this.innerText)">Q</button>
         <button class="btn"  onClick="btnClick(this.innerText)">W</button>
         <button class="btn"  onClick="btnClick(this.innerText)">E</button>
@@ -76,4 +75,3 @@
         <button onClick="btnClick('space')" style="width: 80%">SPACE</button>
     </body>
 </html>
-
